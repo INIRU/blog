@@ -4,10 +4,15 @@ import Link from 'next/link';
 import NavbarLogo from './NavbarLogo';
 import NavbarAuth from './NavbarAuth';
 
-export default function Navbar() {
+import { authOptions } from '@/pages/api/auth/[...nextauth]';
+import { getServerSession } from 'next-auth';
+
+export default async function Navbar() {
   const link: { name: string; link: string }[] = [
     { name: 'Portfolio', link: 'https://iniru.github.io' },
   ];
+
+  const session = await getServerSession(authOptions);
 
   return (
     <div className={style.navbar}>
@@ -24,7 +29,7 @@ export default function Navbar() {
         })}
       </div>
       <div className="w-100"></div>
-      <NavbarAuth />
+      <NavbarAuth session={session} />
     </div>
   );
 }
