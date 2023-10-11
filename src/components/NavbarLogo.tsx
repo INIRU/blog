@@ -9,11 +9,7 @@ import { useEffect, useState } from 'react';
 
 export default function NavbarLogo() {
   const [logo, setLogo] = useState(false);
-  const [font, setFont] = useState<string>();
-
-  useEffect(() => {
-    setFont(NavbarLogoFont().className);
-  }, []);
+  const [font] = useState<string>(NavbarLogoFont().className);
 
   return (
     <div
