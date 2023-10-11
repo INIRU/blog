@@ -32,3 +32,16 @@
 .navLink:hover {
   filter: brightness(0.8);
 }
+
+.authContainer {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.authContainer:hover {
+  transform: scale(1.1);
+}

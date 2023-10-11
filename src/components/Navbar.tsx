@@ -2,6 +2,7 @@ import style from '@/css/Navbar.module.css';
 
 import Link from 'next/link';
 import NavbarLogo from './NavbarLogo';
+import NavbarAuth from './NavbarAuth';
 
 export default function Navbar() {
   const link: { name: string; link: string }[] = [
@@ -22,6 +23,8 @@ export default function Navbar() {
           );
         })}
       </div>
+      <div className="w-100"></div>
+      <NavbarAuth />
     </div>
   );
 }
