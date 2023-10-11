@@ -1,8 +1,10 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Noto_Sans_Mono } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+import Navbar from '@/components/Navbar';
+
+const notoSansMono = Noto_Sans_Mono({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: '우당탕탕 개발 블로그',
@@ -16,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={notoSansMono.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
