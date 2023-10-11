@@ -1,10 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Noto_Sans_Mono } from 'next/font/google';
+import { notoSansMono } from '@/modules/font';
 
 import Navbar from '@/components/Navbar';
-
-const notoSansMono = Noto_Sans_Mono({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: '우당탕탕 개발 블로그',

@@ -16,5 +16,19 @@
 
 .logoContainer h4 {
   color: white;
-  font-weight: 900;
+  white-space: nowrap;
+  transition: filter 0.3s;
+}
+
+.logoContainer h4:hover {
+  filter: brightness(0.8);
+}
+
+.navLink {
+  color: rgb(201, 199, 199);
+  transition: filter 0.3s;
+}
+
+.navLink:hover {
+  filter: brightness(0.8);
 }

@@ -1,8 +1,13 @@
-body {
+body,
+div {
   margin: 0;
   box-sizing: border-box !important;
 }
 
 a {
   text-decoration: none;
+}
+
+body {
+  background-color: #2d2f32;
 }

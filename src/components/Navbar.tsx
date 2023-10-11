@@ -1,7 +1,7 @@
 import style from '@/css/Navbar.module.css';
 
-import Image from 'next/image';
 import Link from 'next/link';
+import NavbarLogo from './NavbarLogo';
 
 export default function Navbar() {
   const link: { name: string; link: string }[] = [
@@ -11,9 +11,17 @@ export default function Navbar() {
   return (
     <div className={style.navbar}>
       <Link href={'/'} className={style.logoContainer}>
-        <Image src={'/INIRU.png'} width={30} height={30} alt={'logo'}></Image>
-        <h4>INIRU Blog</h4>
+        <NavbarLogo></NavbarLogo>
       </Link>
+      <div>
+        {link.map((data: { name: string; link: string }, i: number) => {
+          return (
+            <Link href={data.link} className={style.navLink} key={i}>
+              {data.name}
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 }
