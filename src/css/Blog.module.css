@@ -40,6 +40,11 @@
   height: 250px;
   padding: 1.5rem 2rem;
   cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.blogCard:hover {
+  transform: scale(1.015);
 }
 
 .cardTitle {
@@ -47,11 +52,6 @@
 }
 
 .cardContent {
-  overflow-y: hidden;
-  text-overflow: ellipsis;
-  font-size: 15px;
-  line-height: 1.1;
-  height: 5.1em;
   filter: brightness(0.8);
   margin: 0px;
   white-space: pre-line;
@@ -61,8 +61,11 @@
 }
 
 .cardContent p {
-  margin: 0px;
-  margin-top: 1%;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  line-height: 1em;
+  height: 4em;
 }
 
 .cardFooter {
