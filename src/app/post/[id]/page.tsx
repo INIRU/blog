@@ -1,8 +1,5 @@
-import { revalidatePath } from 'next/cache';
-
 import style from '@/css/Post.module.css';
 
-import dynamic from 'next/dynamic';
 import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 
@@ -11,9 +8,7 @@ import { notoSansMono } from '@/modules/font';
 import { ObjectId } from 'mongodb';
 import { BlogTimeInfo } from '@/modules/blog-time';
 
-const BlogContent = dynamic(() => import('@/components/Blog/BlogContent'), {
-  loading: () => <p>불러오는중...</p>,
-});
+import BlogContent from '@/components/Blog/BlogContent';
 
 export default async function Post(props: { params: { id: string } }) {
   const db = (await connectDB).db('blog');
