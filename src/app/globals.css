@@ -7,6 +7,7 @@ h4 {
 body,
 div {
   box-sizing: border-box !important;
+  color: white;
 }
 
 a {
@@ -15,6 +16,36 @@ a {
 
 body {
   background-color: #2d2f32;
+}
+
+.wmde-markdown {
+  background-color: transparent !important;
+  color: white !important;
+}
+
+.container {
+  padding: 0% 5%;
+}
+
+.btn-div {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.025rem 0.85rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 15px 30px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.btn:hover,
+.btn-div:hover {
+  transform: scale(1.05);
+  filter: brightness(0.9);
 }
 
 .w-25 {
@@ -29,6 +60,30 @@ body {
   width: 100%;
 }
 
+.mt-1 {
+  margin-top: 1%;
+}
+
+.mt-2 {
+  margin-top: 2%;
+}
+
+.mt-3 {
+  margin-top: 3%;
+}
+
+.mt-4 {
+  margin-top: 4%;
+}
+
+.mt-5 {
+  margin-top: 5%;
+}
+
 .text-center {
   text-align: center;
+}
+
+.shadow-sm {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
