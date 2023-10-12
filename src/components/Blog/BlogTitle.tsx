@@ -1,7 +1,7 @@
 'use client';
 
 import style from '@/css/Blog.module.css';
-import { BlogTitleFont } from '@/modules/font';
+import { BlogTitleFont, notoSansKr } from '@/modules/font';
 
 import { typing, erase, wait } from '@/modules/hangul';
 import { useState, useEffect } from 'react';
@@ -26,5 +26,9 @@ export default function BlogTitle() {
     typeName('우당탕탕 개발 블로그', 0);
   }, []);
 
-  return <h1 className={`${style.blogTitle} ${font} text-center`}>{title}</h1>;
+  return (
+    <h1 className={`${style.blogTitle} ${font} ${notoSansKr} text-center`}>
+      {title}
+    </h1>
+  );
 }
