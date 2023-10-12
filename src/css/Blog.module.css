@@ -1,0 +1,24 @@
+.blogTitle {
+  color: white;
+  margin-top: 100px;
+  font-size: 52px;
+}
+
+.blogTitle::after {
+  content: '';
+  margin-left: 0.42rem;
+  border-right: 2px solid #ffffff;
+  animation: 0.7s cursor infinite steps(1);
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

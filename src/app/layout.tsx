@@ -2,7 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { notoSansMono } from '@/modules/font';
 
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/Navbar/Navbar';
 import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
