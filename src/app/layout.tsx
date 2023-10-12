@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { notoSansMono } from '@/modules/font';
+import { notoSansKr } from '@/modules/font';
 
 import Navbar from '@/components/Navbar/Navbar';
 import { Analytics } from '@vercel/analytics/react';
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={notoSansMono.className}>
+      <body className={notoSansKr.className}>
         <Navbar />
         {children}
         <Analytics />

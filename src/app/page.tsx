@@ -12,13 +12,13 @@ import Link from 'next/link';
 
 export default async function Home() {
   const db = (await connectDB).db('blog');
-  const posts = await db.collection('posts').find().toArray();
+  const posts = (await db.collection('posts').find().toArray()).reverse();
 
   const session = await getServerSession(authOptions);
 
   return (
     <main>
-      <div className={style.container}>
+      <div className={`container`}>
         <div className={style.titleContainer}>
           <BlogTitle />
         </div>
@@ -27,6 +27,7 @@ export default async function Home() {
             return (
               <BlogCard
                 key={i}
+                id={data._id}
                 title={data.title}
                 content={data.content}
                 views={data.views}
@@ -38,7 +39,7 @@ export default async function Home() {
         {session?.user?.email == 'iniru@kakao.com' ? (
           <div className={style.writeContainer}>
             <Link href={'/write'}>
-              <div className={`btn-div ${style.writeBtn}`}>
+              <div className={`btn btn-div ${style.writeBtn}`}>
                 <FontAwesomeIcon icon={faPen} className={style.writeIcon} />
                 <p>글쓰기</p>
               </div>

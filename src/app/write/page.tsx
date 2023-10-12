@@ -81,6 +81,7 @@ export default function Write() {
                     title: title,
                     content: value,
                     date: new Date(),
+                    secret: process.env.JWT_SECRET,
                   }),
                 })
                   .then((r) => {
@@ -90,8 +91,9 @@ export default function Write() {
                       alert(r.status + ' | ' + r.statusText);
                     }
                   })
-                  .then((result) => {
+                  .then(() => {
                     router.push('/');
+                    router.refresh();
                   });
               }}
             >

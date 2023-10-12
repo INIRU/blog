@@ -14,7 +14,16 @@ function BlogTime(blog: string) {
     return `${Math.floor(timeDiff / 60)}분 전`;
   } else if (timeDiff >= 1) {
     return `${Math.floor(timeDiff)}초 전`;
+  } else {
+    return '방금 전'
   }
 }
 
-export default BlogTime;
+function BlogTimeInfo(date: string) {
+  const blogDate = new Date(date);
+  return `${blogDate.getFullYear()}년 ${
+    blogDate.getMonth() + 1
+  }월 ${blogDate.getDate()}일`;
+}
+
+export { BlogTime, BlogTimeInfo };

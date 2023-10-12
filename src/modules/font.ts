@@ -37,7 +37,7 @@ const sunflower = Sunflower({ preload: false, weight: '700' });
 
 const gugi = Gugi({ preload: false, weight: '400' });
 
-const notoSansKr = Noto_Sans_KR({ preload: false, weight: '700' });
+const notoSansKr = Noto_Sans_KR({ preload: false });
 
 function NavbarLogoFont(): NextFont {
   const fontList = [

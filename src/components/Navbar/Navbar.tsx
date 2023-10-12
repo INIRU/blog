@@ -6,6 +6,7 @@ import NavbarAuth from './NavbarAuth';
 
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { getServerSession } from 'next-auth';
+import { notoSansMono } from '@/modules/font';
 
 export default async function Navbar() {
   const link: { name: string; link: string }[] = [
@@ -15,14 +16,18 @@ export default async function Navbar() {
   const session = await getServerSession(authOptions);
 
   return (
-    <div className={style.navbar}>
+    <div className={`${style.navbar} ps-4 pe-4`}>
       <Link href={'/'} className={style.logoContainer}>
         <NavbarLogo></NavbarLogo>
       </Link>
       <div>
         {link.map((data: { name: string; link: string }, i: number) => {
           return (
-            <Link href={data.link} className={style.navLink} key={i}>
+            <Link
+              href={data.link}
+              className={`${style.navLink} ${notoSansMono.className}`}
+              key={i}
+            >
               {data.name}
             </Link>
           );

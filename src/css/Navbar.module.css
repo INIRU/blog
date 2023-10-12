@@ -4,7 +4,6 @@
   height: 52px;
   display: flex;
   align-items: center;
-  padding: 0% 2%;
   gap: 10px;
 }
 
@@ -26,6 +25,7 @@
 
 .navLink {
   color: rgb(201, 199, 199);
+  font-weight: 400;
   transition: filter 0.3s;
 }
 
