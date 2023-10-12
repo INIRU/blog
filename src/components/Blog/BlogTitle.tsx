@@ -28,11 +28,7 @@ export default function BlogTitle() {
 
   return (
     <div style={{ height: '75px' }}>
-      <h1
-        className={`${style.blogTitle} ${font} ${notoSansKr.className} text-center`}
-      >
-        {title}
-      </h1>
+      <h1 className={`${style.blogTitle} ${font} text-center`}>{title}</h1>
     </div>
   );
 }
