@@ -1,5 +1,5 @@
-import BlogTitle from '@/components/Blog/BlogTitle';
-import BlogCard from '@/components/Blog/BlogCard';
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 import style from '@/css/Blog.module.css';
 
@@ -8,7 +8,9 @@ import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { getServerSession } from 'next-auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
-import Link from 'next/link';
+
+const BlogTitle = dynamic(() => import('@/components/Blog/BlogTitle'));
+const BlogCard = dynamic(() => import('@/components/Blog/BlogCard'));
 
 export default async function Home() {
   const db = (await connectDB).db('blog');
