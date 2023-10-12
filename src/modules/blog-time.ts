@@ -1,4 +1,4 @@
-function BlogTime(blog: string) {
+function BlogTime(blog: string): string {
   const blogMs = new Date(blog).getTime();
   const nowMs = new Date().getTime();
 
@@ -15,11 +15,11 @@ function BlogTime(blog: string) {
   } else if (timeDiff >= 1) {
     return `${Math.floor(timeDiff)}초 전`;
   } else {
-    return '방금 전'
+    return '방금 전';
   }
 }
 
-function BlogTimeInfo(date: string) {
+function BlogTimeInfo(date: string): string {
   const blogDate = new Date(date);
   return `${blogDate.getFullYear()}년 ${
     blogDate.getMonth() + 1

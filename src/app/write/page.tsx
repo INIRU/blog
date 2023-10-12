@@ -81,7 +81,6 @@ export default function Write() {
                     title: title,
                     content: value,
                     date: new Date(),
-                    secret: process.env.JWT_SECRET,
                   }),
                 })
                   .then((r) => {

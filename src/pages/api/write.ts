@@ -16,10 +16,6 @@ export default async function handler(
       }
     });
 
-    if (data.secret != process.env.SECRET) {
-      return res.status(400).json('');
-    }
-
     data.views = 0;
     try {
       const db = (await connectDB).db('blog');

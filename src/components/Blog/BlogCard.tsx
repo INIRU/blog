@@ -1,8 +1,9 @@
+import type { ObjectId } from 'mongodb';
+
 import style from '@/css/Blog.module.css';
 
 import { faEye, faClock } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ObjectId } from 'mongodb';
 
 import { BlogTime } from '@/modules/blog-time';
 import Link from 'next/link';

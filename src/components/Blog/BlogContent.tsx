@@ -4,15 +4,13 @@ import dynamic from 'next/dynamic';
 
 import '@uiw/react-md-editor/markdown-editor.css';
 import '@uiw/react-markdown-preview/markdown.css';
-import { ObjectId } from 'mongodb';
+
 import { useEffect } from 'react';
 
-const EditerMarkdown = dynamic(
-  () =>
-    import('@uiw/react-md-editor').then((mod) => {
-      return mod.default.Markdown;
-    }),
-  { ssr: false }
+const Markdown = dynamic(() =>
+  import('@uiw/react-md-editor').then((mod) => {
+    return mod.default.Markdown;
+  })
 );
 
 export default function BlogContent({
@@ -28,5 +26,5 @@ export default function BlogContent({
     }
   }, []);
 
-  return <EditerMarkdown source={content} />;
+  return <Markdown source={content} />;
 }

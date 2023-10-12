@@ -1,5 +1,6 @@
 import style from '@/css/Post.module.css';
 
+import dynamic from 'next/dynamic';
 import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 
@@ -8,7 +9,7 @@ import { notoSansMono } from '@/modules/font';
 import { ObjectId } from 'mongodb';
 import { BlogTimeInfo } from '@/modules/blog-time';
 
-import BlogContent from '@/components/Blog/BlogContent';
+const BlogContent = dynamic(() => import('@/components/Blog/BlogContent'));
 
 export default async function Post(props: { params: { id: string } }) {
   const db = (await connectDB).db('blog');
@@ -20,19 +21,20 @@ export default async function Post(props: { params: { id: string } }) {
     result = await db
       .collection('posts')
       .findOne({ _id: new ObjectId(props.params.id) });
-  } catch (e) {}
-
-  if (!(result instanceof Object)) {
-    redirect('/404');
-  }
-
-  if (!viewLog) {
-    db.collection('posts').updateOne(
-      { _id: new ObjectId(props.params.id) },
-      {
-        $inc: { views: 1 },
-      }
-    );
+    if (!viewLog) {
+      await db.collection('posts').updateOne(
+        { _id: new ObjectId(props.params.id) },
+        {
+          $inc: { views: 1 },
+        }
+      );
+    }
+  } catch (e) {
+    return redirect('/404');
+  } finally {
+    if (!(result instanceof Object)) {
+      return redirect('/404');
+    }
   }
 
   return (
@@ -53,7 +55,7 @@ export default async function Post(props: { params: { id: string } }) {
       <div className={`${style.postContentConatiner} mt-4`}>
         <div className={style.postSide}></div>
         <div className={style.post}>
-          <BlogContent content={result?.content} _id={result._id.toString()} />
+          <BlogContent content={result?.content} _id={result?._id.toString()} />
         </div>
         <div className={style.postSide}></div>
       </div>

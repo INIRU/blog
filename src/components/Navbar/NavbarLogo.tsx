@@ -5,7 +5,7 @@ import { NavbarLogoFont } from '@/modules/font';
 
 import Image from 'next/image';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function NavbarLogo() {
   const [logo, setLogo] = useState(false);
