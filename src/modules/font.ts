@@ -1,4 +1,5 @@
-import { NextFont } from 'next/dist/compiled/@next/font';
+import type { NextFont } from 'next/dist/compiled/@next/font';
+
 import {
   Noto_Sans_Mono,
   Pixelify_Sans,
@@ -13,31 +14,45 @@ import {
 
 const notoSansMono = Noto_Sans_Mono({
   subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '600'],
 });
 
 const pixelifySans = Pixelify_Sans({
   subsets: ['latin'],
+  display: 'swap',
+  weight: '600',
 });
 
 const yujiHentaiganaAkari = Yuji_Hentaigana_Akari({
   subsets: ['latin'],
+  display: 'swap',
   weight: '400',
 });
 
 const autourOne = Autour_One({
   subsets: ['latin'],
+  display: 'swap',
   weight: '400',
 });
 
-const pacifico = Pacifico({ subsets: ['latin'], weight: '400' });
+const pacifico = Pacifico({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: '400',
+});
 
-const blackHanSans = Black_Han_Sans({ preload: false, weight: '400' });
+const blackHanSans = Black_Han_Sans({
+  preload: false,
+  display: 'swap',
+  weight: '400',
+});
 
-const sunflower = Sunflower({ preload: false, weight: '700' });
+const sunflower = Sunflower({ preload: false, weight: '700', display: 'swap' });
 
-const gugi = Gugi({ preload: false, weight: '400' });
+const gugi = Gugi({ preload: false, weight: '400', display: 'swap' });
 
-const notoSansKr = Noto_Sans_KR({ preload: false });
+const notoSansKr = Noto_Sans_KR({ preload: false, display: 'swap' });
 
 function NavbarLogoFont(): NextFont {
   const fontList = [
@@ -48,13 +63,13 @@ function NavbarLogoFont(): NextFont {
     pacifico,
   ];
 
-  return fontList[Math.floor(Math.random() * (fontList.length - 0)) + 0];
+  return fontList[Math.floor(Math.random() * fontList.length)];
 }
 
 function BlogTitleFont(): NextFont {
   const fontList = [blackHanSans, sunflower, gugi, notoSansKr];
 
-  return fontList[Math.floor(Math.random() * (fontList.length - 0)) + 0];
+  return fontList[Math.floor(Math.random() * fontList.length)];
 }
 
 export {
@@ -67,6 +82,7 @@ export {
   sunflower,
   gugi,
   notoSansKr,
+  /** Func */
   NavbarLogoFont,
   BlogTitleFont,
 };

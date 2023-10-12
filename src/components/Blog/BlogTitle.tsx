@@ -1,7 +1,7 @@
 'use client';
 
 import style from '@/css/Blog.module.css';
-import { BlogTitleFont, notoSansKr } from '@/modules/font';
+import { BlogTitleFont } from '@/modules/font';
 
 import { typing, erase, wait } from '@/modules/hangul';
 import { useState, useEffect } from 'react';
