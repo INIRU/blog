@@ -1,14 +1,23 @@
 import type { ObjectId } from 'mongodb';
+import type {
+  IconLookup,
+  IconDefinition,
+} from '@fortawesome/fontawesome-svg-core';
 
 import style from '@/css/Blog.module.css';
 
-import { faEye } from '@fortawesome/free-regular-svg-icons/faEye';
-import { faClock } from '@fortawesome/free-regular-svg-icons/faClock';
+import { findIconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { BlogTime } from '@/modules/blog-time';
 import emojiRegex from 'emoji-regex';
 import Link from 'next/link';
+
+const eyeLookup: IconLookup = { prefix: 'far', iconName: 'eye' };
+const eyeIconDefinition: IconDefinition = findIconDefinition(eyeLookup);
+
+const clockLookup: IconLookup = { prefix: 'far', iconName: 'clock' };
+const clockIconDefinition: IconDefinition = findIconDefinition(clockLookup);
 
 export default function BlogCard({
   id,
@@ -37,7 +46,7 @@ export default function BlogCard({
         <div className={style.cardFooter}>
           <div className={style.footerContent}>
             <FontAwesomeIcon
-              icon={faEye}
+              icon={eyeIconDefinition}
               className={style.footerItem}
             ></FontAwesomeIcon>
             <p>{views}</p>
@@ -45,7 +54,7 @@ export default function BlogCard({
           <div className="w-100"></div>
           <div className={style.footerContent}>
             <FontAwesomeIcon
-              icon={faClock}
+              icon={clockIconDefinition}
               className={style.footerItem}
             ></FontAwesomeIcon>
             <p>{BlogTime(date)}</p>

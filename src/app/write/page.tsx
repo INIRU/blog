@@ -92,7 +92,6 @@ export default function Write() {
                   })
                   .then(() => {
                     router.push('/');
-                    router.refresh();
                   });
               }}
             >
