@@ -1,9 +1,9 @@
 import type { ObjectId } from 'mongodb';
-import { Suspense } from 'react';
 
 import style from '@/css/Blog.module.css';
 
-import { faEye, faClock } from '@fortawesome/free-regular-svg-icons';
+import { faEye } from '@fortawesome/free-regular-svg-icons/faEye';
+import { faClock } from '@fortawesome/free-regular-svg-icons/faClock';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { BlogTime } from '@/modules/blog-time';

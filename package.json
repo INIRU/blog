@@ -22,6 +22,7 @@
     "mongodb": "^6.1.0",
     "next": "13.5.4",
     "next-auth": "^4.23.2",
+    "next-remove-imports": "^1.0.12",
     "react": "^18",
     "react-dom": "^18",
     "sharp": "^0.32.6"

@@ -1,6 +1,5 @@
 import style from '@/css/Post.module.css';
 
-import dynamic from 'next/dynamic';
 import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 

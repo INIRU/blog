@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const removeImports = require('next-remove-imports')();
+
+const nextConfig = removeImports({
   reactStrictMode: true,
   images: {
     minimumCacheTTL: 60,
@@ -12,6 +14,6 @@ const nextConfig = {
       },
     ],
   },
-};
+});
 
 module.exports = nextConfig;

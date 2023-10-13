@@ -15,6 +15,7 @@ const Markdown = dynamic(
     }),
   {
     loading: () => <Skeleton ch={[32, 0, 23, 67, 55, 60, 42, 35, 42, 0, 15]} />,
+    ssr: false,
   }
 );
 
