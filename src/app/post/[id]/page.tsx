@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import style from '@/css/Post.module.css';
 
 import { redirect } from 'next/navigation';
