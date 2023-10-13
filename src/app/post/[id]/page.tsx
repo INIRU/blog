@@ -9,7 +9,9 @@ import { notoSansMono } from '@/modules/font';
 import { ObjectId } from 'mongodb';
 import { BlogTimeInfo } from '@/modules/blog-time';
 
-const BlogContent = dynamic(() => import('@/components/Blog/BlogContent'));
+const BlogContent = dynamic(() => import('@/components/Blog/BlogContent'), {
+  loading: () => <p>123</p>,
+});
 
 export default async function Post(props: { params: { id: string } }) {
   const db = (await connectDB).db('blog');

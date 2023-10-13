@@ -1,21 +1,13 @@
 import style from '@/css/Navbar.module.css';
 
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { getServerSession } from 'next-auth';
 import { notoSansMono } from '@/modules/font';
 
-import NavbarLogoLoding from '@/components/Loding/NavbarLogo';
-import NavbarAuthLoding from '../Loding/NavbarAuth';
-
-const NavbarLogo = dynamic(() => import('@/components/Navbar/NavbarLogo'), {
-  loading: () => <NavbarLogoLoding />,
-});
-const NavbarAuth = dynamic(() => import('@/components/Navbar/NavbarAuth'), {
-  loading: () => <NavbarAuthLoding />,
-});
+import NavbarLogo from './NavbarLogo';
+import NavbarAuth from './NavbarAuth';
 
 export default async function Navbar() {
   const link: { name: string; link: string }[] = [
