@@ -9,12 +9,12 @@ import { getServerSession } from 'next-auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 
-import BlogTitleLoding from '@/components/Loding/BlogTitle';
+import BlogTitle from '@/components/Blog/BlogTitle';
+import BlogCardLoding from '@/components/Loding/BlogCard';
 
-const BlogTitle = dynamic(() => import('@/components/Blog/BlogTitle'), {
-  loading: () => <BlogTitleLoding />,
+const BlogCard = dynamic(() => import('@/components/Blog/BlogCard'), {
+  loading: () => <BlogCardLoding />,
 });
-const BlogCard = dynamic(() => import('@/components/Blog/BlogCard'));
 
 export default async function Home() {
   const db = (await connectDB).db('blog');
