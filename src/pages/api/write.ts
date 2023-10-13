@@ -20,8 +20,7 @@ export default async function handler(
     try {
       const db = (await connectDB).db('blog');
       db.collection('posts').insertOne(data);
-      await res.revalidate('/');
-      return res.status(200).json({ revalidated: true });
+      res.status(200).json('');
     } catch (e) {
       res.status(500).json('');
     }
