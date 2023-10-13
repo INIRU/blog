@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 import Link from 'next/link';
 
 import style from '@/css/Blog.module.css';
@@ -9,8 +10,13 @@ import { getServerSession } from 'next-auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 
-const BlogTitle = dynamic(() => import('@/components/Blog/BlogTitle'));
-const BlogCard = dynamic(() => import('@/components/Blog/BlogCard'));
+import BlogCardLoding from '@/components/Loding/BlogCard';
+import BlogTitleLoding from '@/components/Loding/BlogTitle';
+import BlogTitle from '@/components/Blog/BlogTitle';
+import BlogCard from '@/components/Blog/BlogCard';
+
+// const BlogTitle = dynamic(() => import('@/components/Blog/BlogTitle'));
+// const BlogCard = dynamic(() => import('@/components/Blog/BlogCard'));
 
 export default async function Home() {
   const db = (await connectDB).db('blog');
@@ -22,21 +28,29 @@ export default async function Home() {
     <main>
       <div className={`container`}>
         <div className={style.titleContainer}>
-          <BlogTitle />
+          <Suspense fallback={<BlogTitleLoding />}>
+            <BlogTitle />
+          </Suspense>
         </div>
         <div className={style.cardContainer}>
-          {posts.map((data, i) => {
-            return (
-              <BlogCard
-                key={i}
-                id={data._id}
-                title={data.title}
-                content={data.content}
-                views={data.views}
-                date={data.date}
-              />
-            );
-          })}
+          <Suspense
+            fallback={[...Array(3)].map((_, i) => {
+              return <BlogCardLoding key={i} />;
+            })}
+          >
+            {posts.map((data, i) => {
+              return (
+                <BlogCard
+                  key={i}
+                  id={data._id}
+                  title={data.title}
+                  content={data.content}
+                  views={data.views}
+                  date={data.date}
+                />
+              );
+            })}
+          </Suspense>
         </div>
         {session?.user?.email == 'iniru@kakao.com' ? (
           <div className={style.writeContainer}>
