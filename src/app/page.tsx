@@ -10,11 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 
 import BlogTitle from '@/components/Blog/BlogTitle';
-import BlogCardLoding from '@/components/Loding/BlogCard';
-
-const BlogCard = dynamic(() => import('@/components/Blog/BlogCard'), {
-  loading: () => <BlogCardLoding />,
-});
+import BlogCard from '@/components/Blog/BlogCard';
 
 export default async function Home() {
   const db = (await connectDB).db('blog');
