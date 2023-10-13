@@ -21,12 +21,14 @@ export default function NavbarLogo() {
         setLogo(false);
       }}
     >
-      <Image
-        src={`/INIRU.` + (logo ? 'gif' : 'png')}
-        width={30}
-        height={30}
-        alt={'logo'}
-      ></Image>
+      <div className={style.logo}>
+        <Image
+          src={`/INIRU.` + (logo ? 'gif' : 'png')}
+          width={30}
+          height={30}
+          alt={'logo'}
+        ></Image>
+      </div>
       <h4 className={font}>INIRU Blog</h4>
     </div>
   );

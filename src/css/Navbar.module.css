@@ -13,6 +13,11 @@
   gap: 0.25rem;
 }
 
+.logo {
+  width: 30px;
+  height: 30px;
+}
+
 .logoContainer h4 {
   color: white;
   white-space: nowrap;

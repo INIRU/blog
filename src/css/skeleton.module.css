@@ -1,28 +1,12 @@
 .loding {
   background-color: gray;
-  height: 1.25em;
+  height: 1.2em;
   border-radius: 0.25em;
   animation: skeleton 1s 1s infinite alternate;
+}
 
-  &.loding:is(h1) {
-    width: 10ch;
-  }
-
-  &.loding:is(h2) {
-    width: 10ch;
-  }
-
-  &.loding:is(p) {
-    width: 100%;
-  }
-
-  &.loding:is(i) {
-    border-radius: 0.5em;
-  }
-
-  &.loding:is(span) {
-    width: 5ch;
-  }
+.image {
+  border-radius: 50% !important;
 }
 
 @keyframes skeleton {

@@ -1,10 +1,12 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { notoSansKr } from '@/modules/font';
 
-import Navbar from '@/components/Navbar/Navbar';
 import { Analytics } from '@vercel/analytics/react';
+
+const Navbar = dynamic(() => import('@/components/Navbar/Navbar'));
 
 export const metadata: Metadata = {
   title: '우당탕탕 개발 블로그',

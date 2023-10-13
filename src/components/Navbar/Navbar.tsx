@@ -1,12 +1,21 @@
 import style from '@/css/Navbar.module.css';
 
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import NavbarLogo from './NavbarLogo';
-import NavbarAuth from './NavbarAuth';
 
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { getServerSession } from 'next-auth';
 import { notoSansMono } from '@/modules/font';
+
+import NavbarLogoLoding from '@/components/Loding/NavbarLogo';
+import NavbarAuthLoding from '../Loding/NavbarAuth';
+
+const NavbarLogo = dynamic(() => import('@/components/Navbar/NavbarLogo'), {
+  loading: () => <NavbarLogoLoding />,
+});
+const NavbarAuth = dynamic(() => import('@/components/Navbar/NavbarAuth'), {
+  loading: () => <NavbarAuthLoding />,
+});
 
 export default async function Navbar() {
   const link: { name: string; link: string }[] = [
@@ -18,7 +27,7 @@ export default async function Navbar() {
   return (
     <div className={`${style.navbar} ps-4 pe-4`}>
       <Link href={'/'} className={style.logoContainer}>
-        <NavbarLogo></NavbarLogo>
+        <NavbarLogo />
       </Link>
       <div>
         {link.map((data: { name: string; link: string }, i: number) => {

@@ -1,22 +1,26 @@
+import dynamic from 'next/dynamic';
+
 import style from '@/css/Blog.module.css';
 import skeleton from '@/css/skeleton.module.css';
 
-export default async function Skeleton() {
+const Skeleton = dynamic(() => import('@/components/Skeleton/Skeleton'));
+
+export default async function BlogCardLoding() {
   return (
     <div className={`${style.blogCard} shadow-sm`}>
-      <h1 className={`${style.cardTitle} ${skeleton.loding}`}></h1>
+      <Skeleton ch={[10]} _className={style.cardTitle} />
       <div className={style.cardContent}>
-        <p className={skeleton.loding}></p>
+        <Skeleton ch={[17, 26, 24, 20]} />
       </div>
       <div className={style.cardFooter}>
         <div className={style.footerContent}>
-          <i className={`${style.footerItem} ${skeleton.loding}`}></i>
-          <span className={skeleton.loding}></span>
+          <Skeleton ch={[3]} _className={style.footerItem} />
+          <Skeleton ch={[5]} />
         </div>
         <div className="w-100"></div>
         <div className={style.footerContent}>
-          <i className={`${style.footerItem} ${skeleton.loding}`}></i>
-          <span className={skeleton.loding}></span>
+          <Skeleton ch={[3]} _className={style.footerItem} />
+          <Skeleton ch={[5]} />
         </div>
       </div>
     </div>

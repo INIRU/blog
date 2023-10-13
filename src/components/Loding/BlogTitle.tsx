@@ -1,10 +1,11 @@
 import style from '@/css/Blog.module.css';
-import skeleton from '@/css/skeleton.module.css';
 
-export default async function BlogTitle() {
+import Skeleton from '../Skeleton/Skeleton';
+
+export default async function BlogTitleLoding() {
   return (
     <div style={{ height: '75px' }}>
-      <h2 className={`${style.blogTitle} ${skeleton.loding} text-center`}></h2>
+      <Skeleton ch={[11]} _className={`${style.blogTitle} text-center`} />
     </div>
   );
 }
