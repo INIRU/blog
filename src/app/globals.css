@@ -37,6 +37,7 @@ body {
 
 .markdown {
   color: #eeffff;
+  font-size: 16px;
 }
 
 .markdown .hljs-comment {

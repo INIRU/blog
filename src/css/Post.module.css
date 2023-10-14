@@ -3,6 +3,10 @@
   font-weight: 800 !important;
 }
 
+.postTime {
+  color: rgb(194, 194, 194);
+}
+
 .postAuthor {
   font-size: 18px;
   font-weight: 600;

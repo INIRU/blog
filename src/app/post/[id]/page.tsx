@@ -45,16 +45,14 @@ export default async function Post(props: { params: { id: string } }) {
             INIRU
           </p>
           <span>•</span>
-          <p style={{ filter: 'brightness(0.85)' }}>
-            {BlogTimeInfo(result?.date)}
-          </p>
+          <p className={style.postTime}>{BlogTimeInfo(result?.date)}</p>
         </div>
         <hr className="mt-4" />
       </div>
       <div className={`${style.postContentConatiner} mt-4`}>
         <div className={style.postSide}></div>
         <div className={style.post}>
-          <div className="markdown" style={{ fontSize: '16px' }}>
+          <div className="markdown">
             <Markdown source={result?.content} />
           </div>
         </div>
