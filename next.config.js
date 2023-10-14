@@ -12,6 +12,12 @@ const nextConfig = removeImports({
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'simpleicons.org',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 });

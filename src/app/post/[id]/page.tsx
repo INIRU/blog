@@ -1,5 +1,3 @@
-export const dynamic = 'force-static';
-
 import style from '@/css/Post.module.css';
 
 import { redirect } from 'next/navigation';
@@ -11,6 +9,8 @@ import { ObjectId } from 'mongodb';
 import { BlogTimeInfo } from '@/modules/blog-time';
 
 import BlogContent from '@/components/Blog/BlogContent';
+
+import { Markdown } from '@/components/Markdown/Markdown';
 
 export default async function Post(props: { params: { id: string } }) {
   const db = (await connectDB).db('blog');
@@ -56,7 +56,10 @@ export default async function Post(props: { params: { id: string } }) {
       <div className={`${style.postContentConatiner} mt-4`}>
         <div className={style.postSide}></div>
         <div className={style.post}>
-          <BlogContent content={result?.content} _id={result?._id.toString()} />
+          {/* <BlogContent content={result?.content} _id={result?._id.toString()} /> */}
+          <div className="markdown" style={{ fontSize: '16px' }}>
+            <Markdown source={result?.content} />
+          </div>
         </div>
         <div className={style.postSide}></div>
       </div>

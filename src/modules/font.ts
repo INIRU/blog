@@ -3,14 +3,19 @@ import type { NextFont } from 'next/dist/compiled/@next/font';
 import {
   Noto_Sans_Mono,
   Pixelify_Sans,
-  Yuji_Hentaigana_Akari,
   Autour_One,
   Pacifico,
   Black_Han_Sans,
   Sunflower,
   Gugi,
   Noto_Sans_KR,
+  Fira_Code,
 } from 'next/font/google';
+
+const firaCode = Fira_Code({
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 const notoSansMono = Noto_Sans_Mono({
   subsets: ['latin'],
@@ -22,12 +27,6 @@ const pixelifySans = Pixelify_Sans({
   subsets: ['latin'],
   display: 'swap',
   weight: '600',
-});
-
-const yujiHentaiganaAkari = Yuji_Hentaigana_Akari({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: '400',
 });
 
 const autourOne = Autour_One({
@@ -55,13 +54,7 @@ const gugi = Gugi({ preload: false, weight: '400', display: 'swap' });
 const notoSansKr = Noto_Sans_KR({ preload: false, display: 'swap' });
 
 function NavbarLogoFont(): NextFont {
-  const fontList = [
-    notoSansMono,
-    pixelifySans,
-    yujiHentaiganaAkari,
-    autourOne,
-    pacifico,
-  ];
+  const fontList = [notoSansMono, pixelifySans, autourOne, pacifico];
 
   return fontList[Math.floor(Math.random() * fontList.length)];
 }
@@ -75,13 +68,13 @@ function BlogTitleFont(): NextFont {
 export {
   notoSansMono,
   pixelifySans,
-  yujiHentaiganaAkari,
   autourOne,
   pacifico,
   blackHanSans,
   sunflower,
   gugi,
   notoSansKr,
+  firaCode,
   /** Func */
   NavbarLogoFont,
   BlogTitleFont,

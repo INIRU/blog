@@ -1,7 +1,8 @@
 body,
 h1,
 h4,
-p {
+p,
+pre {
   margin: 0;
 }
 
@@ -19,13 +20,33 @@ body {
   background-color: #2d2f32;
 }
 
-.wmde-markdown {
-  background-color: transparent !important;
-  color: white !important;
+.markdown {
+  color: #eeffff;
 }
 
-.wmde-markdown blockquote {
-  color: white !important;
+.markdown .hljs-comment {
+  color: #4a4a4a;
+  font-style: italic;
+}
+
+.markdown .hljs-keyword {
+  color: #c792ea;
+}
+
+.markdown .hljs-string {
+  color: #c3e88d;
+}
+
+.markdown .hljs-tag {
+  color: #89ddff;
+}
+
+.markdown .hljs-tag .hljs-name {
+  color: #f07178;
+}
+
+.markdown .hljs-title.function_ {
+  color: #82aaff;
 }
 
 .container {

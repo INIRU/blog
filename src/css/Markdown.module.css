@@ -1,0 +1,162 @@
+.h1_Md {
+  font-size: 2em;
+  font-weight: 600;
+  padding-bottom: 0.3em;
+}
+
+.p_Md {
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+
+.blockquote_Md {
+  margin: 0;
+  padding: 0 1em;
+  border-left: 0.25em solid #30363d;
+
+  & .p_Md {
+    margin-bottom: 0;
+  }
+}
+
+.codeIcon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.codeHeader {
+  background-color: rgb(25, 25, 25);
+  border: 1px solid rgb(78, 78, 78);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 0.5em 2em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.8em;
+}
+
+.codeHeader p {
+  color: gray;
+}
+
+.code_Md {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  background-color: rgba(110, 118, 129, 0.4);
+  border-radius: 6px;
+}
+
+.pre_Md {
+  position: relative;
+  word-wrap: normal;
+  font-size: 1em;
+  padding: 1em;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  color: #e6edf3;
+  background-color: rgb(33, 33, 33);
+  border: 1px solid rgb(78, 78, 78);
+  border-radius: 6px;
+}
+
+.pre_Head {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.code_Line {
+  counter-increment: line;
+}
+
+.code_Line::before {
+  padding-left: 1em;
+  padding-right: 0.8em;
+  color: rgb(119, 119, 119);
+  content: counter(line);
+  alt: '';
+  -webkit-user-select: none !important;
+  -moz-user-select: -moz-none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.pre_Md .code_Md {
+  font-size: 100%;
+}
+
+.pre_Md .code_Md.code_Flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.pre_Copy {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 6px;
+  background-color: transparent;
+  transition: background-color 0.3s, opacity 0.2s, transform 0.4s;
+  cursor: pointer;
+}
+
+.pre_Copy svg {
+  transition: inherit;
+  transform: scale(0);
+  position: absolute;
+}
+
+.pre_Copy svg.active {
+  transform: scale(1);
+}
+
+.pre_Copy:hover {
+  background-color: rgb(50, 50, 50);
+}
+
+.pre_Md .pre_Copy {
+  position: absolute;
+  opacity: 0;
+  right: 1em;
+  background-color: rgb(50, 50, 50);
+}
+
+.pre_Md > .code_Md {
+  padding: 0px;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  line-height: 1.5em;
+}
+
+.pre_Md:hover .pre_Copy {
+  opacity: 1;
+}
+
+.ul_Md {
+  margin: 0;
+  padding-left: 2em;
+  margin-bottom: 1em;
+}
+
+.li_Md {
+  transition: transform 0.3s;
+}
+
+.li_Md::marker {
+  font-size: 0.8em;
+}
+
+.li_Md:hover {
+  transform: translateX(0.5em);
+}
