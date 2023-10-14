@@ -124,6 +124,6 @@ const components = {
   ),
 };
 
-export function Markdown(props: MDXRemoteProps) {
+export default function Markdown(props: MDXRemoteProps) {
   return <MDXRemote {...props} components={{ ...components }} />;
 }

@@ -17,6 +17,7 @@ export default function CopyButton({ code }: { code: string }) {
     <>
       <button
         className={style.pre_Copy}
+        aria-label="copy"
         onClick={async () => {
           if (timeoutInstance) {
             clearTimeout(timeoutInstance);

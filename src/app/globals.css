@@ -25,12 +25,12 @@ body {
 }
 
 .markdown .hljs-comment {
-  color: #4a4a4a;
+  color: #ababab;
   font-style: italic;
 }
 
 .markdown .hljs-keyword {
-  color: #c792ea;
+  color: #ca99eb;
 }
 
 .markdown .hljs-string {
@@ -42,7 +42,7 @@ body {
 }
 
 .markdown .hljs-tag .hljs-name {
-  color: #f07178;
+  color: #f49094;
 }
 
 .markdown .hljs-title.function_ {
