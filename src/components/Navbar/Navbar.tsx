@@ -8,6 +8,8 @@ import { notoSansMono } from '@/modules/font';
 
 import NavbarLogo from './NavbarLogo';
 import NavbarAuth from './NavbarAuth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFeather } from '@fortawesome/free-solid-svg-icons/faFeather';
 
 export default async function Navbar() {
   const link: { name: string; link: string }[] = [
@@ -35,7 +37,15 @@ export default async function Navbar() {
         })}
       </div>
       <div className="w-100"></div>
-      <NavbarAuth session={session} />
+      <div className={style.navbarUserContainer}>
+        <Link href={'/write'}>
+          <div className={`${style.writeBtn}`}>
+            <FontAwesomeIcon icon={faFeather} />
+            <p>글 작성</p>
+          </div>
+        </Link>
+        <NavbarAuth session={session} />
+      </div>
     </div>
   );
 }

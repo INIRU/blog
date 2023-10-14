@@ -1,6 +1,5 @@
 .loding {
   background-color: gray;
-  height: 1.2em;
   border-radius: 0.25em;
   animation: skeleton 1s 1s infinite alternate;
 }

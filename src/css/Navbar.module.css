@@ -38,6 +38,12 @@
   filter: brightness(0.8);
 }
 
+.navbarUserContainer {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
 .authContainer {
   display: flex;
   align-items: center;
@@ -52,4 +58,21 @@
 }
 .authUser {
   border-radius: 50%;
+}
+
+.writeBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  white-space: nowrap;
+  font-size: 15px;
+  background-color: #3a49ac;
+  padding: 5px;
+  border-radius: 5px;
+  transition: filter 0.3s, transform 0.3s;
+}
+
+.writeBtn:hover {
+  filter: brightness(0.9);
+  transform: scale(1.1);
 }

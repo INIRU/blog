@@ -84,20 +84,6 @@
   color: inherit;
 }
 
-.writeContainer {
-  height: 100px;
-  display: flex;
-  align-items: center;
-}
-
-.writeIcon {
-  width: 20px;
-}
-
-.writeBtn {
-  background-color: rgb(68, 59, 197);
-}
-
 @keyframes cursor {
   0% {
     opacity: 1;
