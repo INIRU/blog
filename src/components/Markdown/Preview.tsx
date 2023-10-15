@@ -9,10 +9,7 @@ function MDXContent({ children }: { children: string }) {
   const [content, setContent] = useState<any>(null);
   useEffect(() => {
     (async () => {
-      if (children)
-        setContent(
-          await serialize(children, { mdxOptions: { development: true } })
-        );
+      if (children) setContent(await serialize(children));
     })();
   }, [children]);
 
