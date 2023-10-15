@@ -27,10 +27,12 @@ export default function CopyButton({ code }: { code: string }) {
           await navigator.clipboard.writeText(code);
         }}
         onMouseOut={() => {
-          const hideTimer = setTimeout(() => {
-            setBtn(false);
-          }, 500);
-          setTimeoutInstance(hideTimer);
+          if (btn) {
+            const hideTimer = setTimeout(() => {
+              setBtn(false);
+            }, 500);
+            setTimeoutInstance(hideTimer);
+          }
         }}
       >
         <FontAwesomeIcon icon={faCopy} className={btn ? '' : style.active} />

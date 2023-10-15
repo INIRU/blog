@@ -38,12 +38,14 @@ export default async function Navbar() {
       </div>
       <div className="w-100"></div>
       <div className={style.navbarUserContainer}>
-        <Link href={'/write'}>
-          <div className={`${style.writeBtn}`}>
-            <FontAwesomeIcon icon={faFeather} />
-            <p>글 작성</p>
-          </div>
-        </Link>
+        {session?.user?.email == 'iniru@kakao.com' ? (
+          <Link href={'/write'}>
+            <div className={`${style.writeBtn}`}>
+              <FontAwesomeIcon icon={faFeather} />
+              <p>글 작성</p>
+            </div>
+          </Link>
+        ) : null}
         <NavbarAuth session={session} />
       </div>
     </div>

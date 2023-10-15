@@ -9,6 +9,7 @@ import { ObjectId } from 'mongodb';
 import { BlogTimeInfo } from '@/modules/blog-time';
 
 import Markdown from '@/components/Markdown/Markdown';
+import View from '@/components/Blog/View';
 
 export default async function Post(props: { params: { id: string } }) {
   const db = (await connectDB).db('blog');
@@ -38,6 +39,7 @@ export default async function Post(props: { params: { id: string } }) {
 
   return (
     <div>
+      <View id={props.params.id} />
       <div className={`mt-5 container`}>
         <h1 className={style.postTitle}>{result?.title}</h1>
         <div className={`${style.postInfo} mt-4`}>

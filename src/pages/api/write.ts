@@ -16,7 +16,6 @@ export default async function handler(
       }
     });
 
-    data.views = 0;
     try {
       const db = (await connectDB).db('blog');
       db.collection('posts').insertOne(data);

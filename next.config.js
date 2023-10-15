@@ -2,6 +2,9 @@
 const removeImports = require('next-remove-imports')();
 
 const nextConfig = removeImports({
+  experimental: {
+    serverActions: true,
+  },
   reactStrictMode: true,
   images: {
     minimumCacheTTL: 60,
