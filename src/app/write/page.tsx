@@ -16,7 +16,10 @@ const Form = dynamic(() => import('@/components/Write/Form'), {
 export default async function Write() {
   const session = await getServerSession(authOptions);
 
-  if (session?.user?.email != 'iniru@kakao.com') {
+  if (
+    session?.user?.email != 'iniru@kakao.com' &&
+    process.env.NODE_ENV !== 'development'
+  ) {
     redirect('/');
   }
 

@@ -32,7 +32,7 @@ export default function Form() {
         <textarea
           className={style.contentInput}
           placeholder="내용을 작성하세요."
-          onKeyDown={(e: KeyboardEvent<HTMLTextAreaElement>) => {
+          onKeyDown={(e) => {
             if (e.key == 'Tab') {
               e.preventDefault();
               const start: number = e.currentTarget.selectionStart;

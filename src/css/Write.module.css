@@ -25,9 +25,15 @@
   color: white;
   white-space: pre;
   border: none;
+  scrollbar-width: none;
 }
 
-.titleInput:focus {
+.titleInput::-webkit-scrollbar {
+  display: none;
+}
+
+.titleInput:focus,
+.contentInput:focus {
   outline: none;
 }
 
@@ -44,14 +50,17 @@
 
 .contentInput {
   background-color: transparent;
-  font-size: 45px;
-  font-weight: 800;
+  font-size: 25px;
   height: 60px;
   resize: none;
   color: white;
   white-space: pre;
   border: none;
   flex-grow: 1;
+}
+
+.contentInput::placeholder {
+  font-style: italic;
 }
 
 .footer {
