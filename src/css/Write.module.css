@@ -44,7 +44,9 @@
 
 .contentInput {
   background-color: transparent;
-  font-size: 20px;
+  font-size: 45px;
+  font-weight: 800;
+  height: 60px;
   resize: none;
   color: white;
   white-space: pre;

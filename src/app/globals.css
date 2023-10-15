@@ -27,6 +27,10 @@ div {
   color: white;
 }
 
+textarea {
+  font-family: inherit;
+}
+
 a {
   text-decoration: none;
 }
