@@ -47,21 +47,11 @@
   box-sizing: border-box;
   white-space: pre;
   overflow-y: scroll;
-  flex-grow: 1;
   resize: none;
   border: none;
   background-color: transparent;
-  font-size: 1.2em;
+  font-size: 20px;
   color: white;
-}
-
-.contentInput::placeholder {
-  font-style: italic;
-  color: #cfcfcf;
-}
-
-.contentInput:focus {
-  outline: none;
 }
 
 .footer {
