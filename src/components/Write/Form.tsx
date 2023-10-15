@@ -20,7 +20,9 @@ export default function Form() {
 
   return (
     <div className={style.container}>
-      <div className={`${style.form} ps-4`}>
+      <div
+        className={`${style.form} ${preview ? style.previewWidth : ''} ps-4`}
+      >
         <textarea
           className={`${style.titleInput} mt-4`}
           placeholder="제목을 작성하세요"
@@ -97,8 +99,8 @@ export default function Form() {
                       }
                     })
                     .then(() => {
-                      router.push('/');
                       router.refresh();
+                      router.push('/');
                     });
                 }}
               >
@@ -109,7 +111,11 @@ export default function Form() {
         </div>
       </div>
       {preview ? (
-        <div className={`markdown ${style.preview}`}>
+        <div
+          className={`markdown ${style.preview} ${
+            preview ? style.previewWidth : ''
+          }`}
+        >
           <Preview content={content} />
         </div>
       ) : null}

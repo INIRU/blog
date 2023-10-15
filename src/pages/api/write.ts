@@ -10,11 +10,6 @@ export default async function handler(
     const data: { [key: string]: string | Date | number } = JSON.parse(
       req.body
     );
-    Object.keys(data).forEach((key) => {
-      if (data[key] == '') {
-        return res.status(400).json('');
-      }
-    });
 
     try {
       const db = (await connectDB).db('blog');
