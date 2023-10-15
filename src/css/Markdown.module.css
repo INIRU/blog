@@ -75,11 +75,13 @@
 }
 
 .code_Line::before {
-  padding-left: 1em;
+  display: inline-block;
+  width: 2em;
   padding-right: 0.8em;
   color: rgb(119, 119, 119);
   content: counter(line);
   alt: '';
+  text-align: end;
   -webkit-user-select: none !important;
   -moz-user-select: -moz-none !important;
   -ms-user-select: none !important;
