@@ -51,6 +51,7 @@
   color: white;
   white-space: pre;
   border: none;
+  flex-grow: 1;
 }
 
 .footer {
