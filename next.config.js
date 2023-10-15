@@ -17,7 +17,7 @@ const nextConfig = removeImports({
       },
       {
         protocol: 'https',
-        hostname: 'simpleicons.org',
+        hostname: 'cdn.jsdelivr.net',
         port: '',
         pathname: '/**',
       },

@@ -53,30 +53,44 @@ const components = {
 
       const fileSplit: string[] = props.children.props.className.split('|');
       const codeLanguage = fileSplit[0].replace(/language-/, '');
-      const codeInfo = (): string[] => {
+      const codeInfo = (): {
+        lang: string;
+        filter?: string;
+        image?: 'plain' | 'original';
+      } => {
         if (/^ts/.test(codeLanguage)) {
-          return [
-            /x$/.test(codeLanguage) ? 'react' : 'typescript',
-            'invert(43%) sepia(27%) saturate(1571%) hue-rotate(172deg) brightness(93%) contrast(87%)',
-          ];
+          return {
+            lang: /x$/.test(codeLanguage) ? 'react' : 'typescript',
+            filter: /x$/.test(codeLanguage)
+              ? 'invert(49%) sepia(15%) saturate(7175%) hue-rotate(162deg) brightness(95%) contrast(101%)'
+              : 'none',
+            image: /x$/.test(codeLanguage) ? 'original' : 'plain',
+          };
+        } else if (/^js/.test(codeLanguage)) {
+          return {
+            lang: /x$/.test(codeLanguage) ? 'react' : 'javascript',
+            image: /x$/.test(codeLanguage) ? 'original' : 'plain',
+          };
         }
-        return [];
+        return { lang: codeLanguage };
       };
 
       return (
         <>
           {fileSplit.length > 1 ? (
             <div className={style.codeHeader}>
-              <div className={style.codeIcon}>
-                <Image
-                  src={`https://simpleicons.org/icons/${codeInfo()[0]}.svg`}
-                  fill={true}
-                  style={{
-                    filter: codeInfo()[1],
-                  }}
-                  alt={''}
-                ></Image>
-              </div>
+              <Image
+                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${
+                  codeInfo().lang
+                }/${codeInfo().lang}-${codeInfo().image ?? 'original'}.svg`}
+                width={20}
+                height={20}
+                style={{
+                  filter: codeInfo().filter ?? '',
+                  borderRadius: '2.5px',
+                }}
+                alt={''}
+              ></Image>
               <div>
                 <p>{fileSplit[1]}</p>
               </div>
