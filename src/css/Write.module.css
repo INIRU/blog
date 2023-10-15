@@ -43,15 +43,12 @@
 }
 
 .contentInput {
-  width: 100%;
-  box-sizing: border-box;
-  white-space: pre;
-  overflow-y: scroll;
-  resize: none;
-  border: none;
   background-color: transparent;
   font-size: 20px;
+  resize: none;
   color: white;
+  white-space: pre;
+  border: none;
 }
 
 .footer {

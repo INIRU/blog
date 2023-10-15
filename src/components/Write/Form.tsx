@@ -20,7 +20,6 @@ export default function Form() {
 
   return (
     <div className={style.container}>
-      {preview ? <Overlay /> : null}
       <div className={`${style.form} ps-4`}>
         <textarea
           className={`${style.titleInput} mt-4`}
@@ -114,14 +113,6 @@ export default function Form() {
           <Preview content={content} />
         </div>
       ) : null}
-    </div>
-  );
-}
-
-function Overlay() {
-  return (
-    <div className={style.overlay}>
-      <h1>미리보기를 종료해주세요.</h1>
     </div>
   );
 }

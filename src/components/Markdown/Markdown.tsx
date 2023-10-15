@@ -41,9 +41,15 @@ const components = {
   ),
   pre: (props: any) => {
     if (props.children.props.className) {
-      const childSplit: string[] = props.children.props.children
-        .replace(/\n$/, '')
-        .split('\n');
+      let childSplit: string[];
+
+      if (props.children.props.children) {
+        childSplit = props.children.props.children
+          .replace(/\n$/, '')
+          .split('\n');
+      } else {
+        return props.children;
+      }
 
       const fileSplit: string[] = props.children.props.className.split('|');
       const codeLanguage = fileSplit[0].replace(/language-/, '');
@@ -87,14 +93,21 @@ const components = {
           >
             <code className={`${style.code_Md} ${style.code_Flex} ${firaCode}`}>
               {childSplit.map((code, i) => {
+                let codeHg: string;
+                try {
+                  codeHg = hljs.highlight(code, {
+                    language: codeLanguage,
+                  }).value;
+                } catch {
+                  codeHg = code;
+                }
+
                 return (
                   <span
                     key={i}
                     className={`markdown-hg ${style.code_Line}`}
                     dangerouslySetInnerHTML={{
-                      __html: hljs.highlight(code, {
-                        language: codeLanguage,
-                      }).value,
+                      __html: codeHg,
                     }}
                   ></span>
                 );
