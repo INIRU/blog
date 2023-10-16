@@ -3,8 +3,10 @@ h1,
 h4,
 p,
 pre,
-hr {
+hr,
+textarea {
   margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -22,7 +24,8 @@ input {
 }
 
 body,
-div {
+div,
+form {
   box-sizing: border-box !important;
   color: white;
 }

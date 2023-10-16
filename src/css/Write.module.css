@@ -1,24 +1,33 @@
 .container {
+  width: 100%;
+  height: calc(100vh - 52px);
   display: flex;
+  flex-direction: column;
 }
 
 .form {
   display: flex;
   width: 100%;
-  height: calc(100vh - 52px);
+  height: inherit;
+  overflow-y: hidden;
+  flex-grow: 1;
+}
+
+.inputArea {
+  display: flex;
   flex-direction: column;
-  position: relative;
 }
 
 .preview {
   width: 100%;
-  height: calc(100vh - 52px);
+  height: 100%;
   overflow: scroll;
   background-color: rgb(29, 29, 29);
   padding: 1em;
 }
 
 .titleInput {
+  width: 100%;
   background-color: transparent;
   font-size: 45px;
   font-weight: 800;
@@ -53,7 +62,8 @@
 .contentInput {
   background-color: transparent;
   font-size: 20px;
-  height: 60px;
+  width: 100%;
+  height: 50px;
   resize: none;
   color: white;
   white-space: pre;
@@ -66,18 +76,13 @@
 }
 
 .footer {
+  width: 100%;
   height: 70px;
-}
-
-.footerMenu {
-  position: absolute;
-  z-index: 3;
   display: flex;
   align-items: center;
   padding: 0 1em;
   left: 0px;
   width: 100vw;
-  height: inherit;
   font-size: 20px;
   background-color: #232323;
 }
@@ -136,4 +141,8 @@
 
 .previewWidth {
   width: 50% !important;
+}
+
+.hideData {
+  display: none;
 }

@@ -5,6 +5,7 @@
 
 .postTime {
   color: rgb(194, 194, 194);
+  white-space: nowrap;
 }
 
 .postAuthor {
@@ -48,4 +49,26 @@
 
 .postSide {
   width: auto;
+}
+
+.controlContainer {
+  display: flex;
+  gap: 5px;
+}
+
+.controlContainer button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.controlContainer button:hover {
+  transform: scale(1.1);
+}
+
+.trash {
+  color: rgb(189, 59, 59) !important;
 }
