@@ -69,6 +69,22 @@ body {
   color: #82aaff;
 }
 
+.markdown .hljs-attr {
+  color: white;
+}
+
+.markdown .hljs-built_in {
+  color: #ffcb6b;
+}
+
+.markdown .hljs-params {
+  color: #ff5370;
+}
+
+.markdown .hljs-property {
+  color: #82aaff;
+}
+
 .container {
   --bs-gutter-x: 1.5rem;
   width: 100%;
