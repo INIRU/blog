@@ -8,7 +8,6 @@ import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons/faPenToSquare';
-import { useState } from 'react';
 
 export default function ControlBtn({ id }: { id: string }) {
   const router = useRouter();

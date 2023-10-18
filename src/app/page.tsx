@@ -15,7 +15,7 @@ export default async function Home() {
         <div className={style.titleContainer}>
           <BlogTitle />
         </div>
-        <div className={style.cardContainer}>
+        <div className={`${style.cardContainer} mb-5`}>
           {posts.map((data, i) => {
             return (
               <BlogCard
