@@ -95,3 +95,33 @@
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .blogTitle {
+    font-size: 45px;
+  }
+
+  .cardContainer {
+    gap: 1.15rem;
+  }
+
+  .blogCard {
+    border-radius: 15px;
+    width: 100%;
+    height: 200px;
+  }
+
+  .cardTitle {
+    font-size: 27px;
+  }
+
+  .cardContent p {
+    font-size: 14px;
+    line-height: 1em;
+  }
+
+  .footerItem {
+    width: 15px;
+    color: inherit;
+  }
+}
