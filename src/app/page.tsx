@@ -1,6 +1,7 @@
 import style from '@/css/Blog.module.css';
 
 import { connectDB } from '@/modules/database';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import BlogTitle from '@/components/Blog/BlogTitle';
 import BlogCard from '@/components/Blog/BlogCard';
@@ -11,6 +12,7 @@ export default async function Home() {
 
   return (
     <main>
+      <SpeedInsights />
       <div className={`container`}>
         <div className={style.titleContainer}>
           <BlogTitle />
